@@ -1,0 +1,16 @@
+# parcel 
+- Dev build
+- Set up a Local Server
+- HMR(Hot Module Replacement) -> automatic page referesh
+- File Watching Algorithm -> written in C++ which is used to perform HMR
+- Caching -> provide fast build
+- Image Optimization
+- Minification of Files
+- Bundling
+- compress the files
+- Consistent Hashing
+- Code Spliting
+- Differential Bundling - to support the older versions of the browsers
+- HTTPs
+- Error Handling
+- Tree Shaking - remove unused code 
