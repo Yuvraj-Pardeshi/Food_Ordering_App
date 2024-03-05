@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- React and ReactDOM CDN Links -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- JS file link -->
+    
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script type="module" src="index.js" defer></script>
+    <!-- this cdn links must alway be decalre before the index.js file as the code inside it require react and reactdom, so them must be loaded file to execute the code inside the index.js file -->
+    
+<!-- 
+    <script>
+        let heading = React.createElement("h1",{id : "heading"},"Hello World");
+        //{} above is use to set the attribute to the elments 
+        console.log(heading) // it will return an object
+        let root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(heading); // render is reponsible to create an h1 tag out the the pass object and render it
+        console.log(root);
+    </script> -->
+
+    <!-- making nested divs -->
+    <!-- <script>
+        const parent = React.createElement('div',{id : "parent"},
+        React.createElement('div',{id : "child"},
+        [React.createElement('h1',{},"I am h1 tag"),React.createElement('h2',{},"I am h2 tag")])); // to create sibling we have to pass them in an array 
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(parent);
+        console.log(parent);
+    </script> -->
+    
+</body>
+</html>
