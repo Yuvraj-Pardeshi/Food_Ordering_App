@@ -3,7 +3,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import { LOGO_IMG_URL } from "../utils/constants";
 // import ReactDOM from "react-dom/client"
 
-const Header = ()=>{
+export const Header = ()=>{
     return (
         <div className="header">
             <div className="logo-container">
