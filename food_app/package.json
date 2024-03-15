@@ -1,10 +1,10 @@
 {
-  "name": "ignite",
+  "name": "food_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "food ordering app",
   "scripts": {
-    "start" : "parcel index.html",
-    "build" : "parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "author": "",
@@ -15,9 +15,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1"
   },
-  "borwserslist":[
+  "browserlist": [
     "last 2 versions"
   ]
 }
