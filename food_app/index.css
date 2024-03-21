@@ -17,9 +17,34 @@ body{
     margin-right: 10%;
 }
 
-.search{
-    padding: 10px;
-    margin-bottom: 10px;
+.filter{
+    display: flex;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+
+.filter-btn{
+    margin-left: 30px;
+    padding: 12px;
+    border: none;
+    border-radius: 30%;
+    background-color: rgb(255, 255, 129);
+    cursor: pointer;
+}
+
+.search input[type=text]{
+    width: 250px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.search-btn{
+    margin-left: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 30%;
+    background-color: rgb(255, 255, 129);
+    cursor: pointer;
 }
 
 .header{
@@ -37,6 +62,14 @@ body{
     display: flex;
     font-size: 20px;
     margin-right: 15px;
+}
+
+.login-btn{
+    padding: 5px 15px;
+    border-radius: 10%;
+    border: none;
+    cursor: pointer;
+    background-color: orange;
 }
 
 .nav-items li{
@@ -67,17 +100,15 @@ body{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
+.res-avability-time{
+    display: flex;
+}
 .res-avability-time span{
-    padding-right: 5px;
+    padding-right: 8px;
 }
 
 .cuisines{
     width: 90%;
-}
-
-.rating-icon{
-    width: 30px;
 }
 
 .res-container{
@@ -102,4 +133,70 @@ body{
     /* font-family: "Poppins", sans-serif; */
      font-family: "Roboto", sans-serif;
     font-weight: 300;
+}
+
+/* shimmer */
+
+.loading-img{
+    animation: loading-img 1s linear infinite alternate;
+}
+@keyframes loading-img {
+    0%{
+        background-color: rgb(190, 190, 190);
+    }
+    100%{
+        background-color: rgb(229, 227, 227);
+    }
+}
+.rescard-skeloton{
+    margin-bottom: 20px;
+}
+.res-image-skeloton{
+    width: 250px;
+    height: 169px;
+    margin-bottom: 15px;
+    border-radius: 10%;
+    /* background-color: lightgray; */
+}
+
+.skeleton-container{
+    margin: 10% 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.skeleton-heading{
+    width: 100%;
+    height: 15px;
+}
+.logo-del-time-skeleton{
+    display: flex;
+    align-items: center;
+}
+.skeleton-logo{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.skeleton-del{
+    display: inline-block;
+    margin-left: 10px;
+    width: 45%;
+    height: 12px;
+}
+
+.skeleton-cuisines{
+    width: 75%;
+    height: 12px;
+    margin-top: 5px;
+}
+.skeleton-location{
+    width: 50%;
+    height: 12px;
+    margin-top: 8px;
 }

@@ -11,7 +11,7 @@ const RestCard = (props)=>{
              <div className="text-content">
                   <div className="res-name"><h3 className="text-wrap">{name}</h3></div>
                   <div className="res-avability-time">
-                      <span className="rating-icon"><FcRating size='16px' /></span>
+                      <span className="rating-icon"><FcRating size='20px' /></span>
                       <span>{avgRatingString}</span>
                       <span>{sla.slaString}</span>
                   </div>
