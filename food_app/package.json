@@ -14,9 +14,15 @@
     "process": "^0.11.10"
   },
   "dependencies": {
+    "@parcel/transformer-css": "^2.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1"
+  },
+  "@parcel/transformer-css": {
+    "pseudoClasses": {
+      "hover": "hover"
+    }
   },
   "browserlist": [
     "last 2 versions"
