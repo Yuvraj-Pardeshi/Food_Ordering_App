@@ -3,10 +3,12 @@ import { FaCartShopping } from "react-icons/fa6";
 import { LOGO_IMG_URL } from "../utils/constants";
 import { useState } from "react";
 import {Link} from "react-router-dom"
+import useonlineStatus from "../utils/useonlineStatus";
 // import ReactDOM from "react-dom/client"
 
 export const Header = ()=>{
     const [loginvalue,setloginvalue] = useState("Login");
+    const onlineStatus = useonlineStatus();
     return (
         <div className="header">
             <div className="logo-container">
@@ -15,6 +17,7 @@ export const Header = ()=>{
             <div className="nav-items-list">
                 {/* do not us <a> tag to navigate to pages, it reloads our whole page. Instead use <Link> */}
                 <ul className="nav-items">
+                    <li>Online Status:{onlineStatus ? "✅" : "🔴" } </li>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/aboutus">About Us</Link></li>
                     <li><Link to="/contactus">Contact Us</Link></li>

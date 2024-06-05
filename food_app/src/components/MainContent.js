@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import RestCard from './RestCard.js';
 import Shimmer_comp from './Shimmer.js';
 import {Link} from 'react-router-dom'
-
+import useonlineStatus from '../utils/useonlineStatus.js';
 const MainContent = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [filterRestaurants, setFilterRestaurants] = useState([]);
@@ -27,6 +27,14 @@ const MainContent = () => {
     setisloading();
     setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setFilterRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+  }
+
+  const onlineStatus = useonlineStatus();
+
+  if(onlineStatus === false){
+    return(
+      <h1>Look like you're offline!! Please check your Internet conection</h1>
+    )
   }
 
   return isloading ? <Shimmer_comp /> : (
