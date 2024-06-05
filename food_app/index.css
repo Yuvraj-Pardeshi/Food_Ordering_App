@@ -206,3 +206,13 @@ body{
     height: 12px;
     margin-top: 8px;
 }
+
+/* User component */
+
+.user-card{
+    width: 20%;
+    border : 2px solid black;
+    padding: 15px;
+    text-align: center;
+    margin: 10px;
+}
