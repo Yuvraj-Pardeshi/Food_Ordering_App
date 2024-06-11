@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RestCard from './RestCard.js';
+import { SWIGGY_API } from '../utils/constants.js';
 import Shimmer_comp from './Shimmer.js';
 import {Link} from 'react-router-dom'
 import useonlineStatus from '../utils/useonlineStatus.js';
@@ -14,17 +15,16 @@ const MainContent = () => {
       (item) => item.info.avgRating > 4
     );
     setFilterRestaurants(filteredRestaurants);
-    console.log(filterRestaurants);
+    // console.log(filterRestaurants);
   };
 
   useEffect(()=>{
       fetchdata();
     },[])
   const fetchdata = async ()=>{
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.61610&lng=73.72860&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
-
+    const data = await fetch(SWIGGY_API)
     const json = await data.json();
-    setisloading();
+    setisloading(false);
     setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setFilterRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
@@ -59,7 +59,7 @@ const MainContent = () => {
       </div>
       <div className="res-container">
         {filterRestaurants.map((restaurant, index) => (
-          <Link to={"/restaurantinfo/" + restaurant.info.id} style={{ textDecoration: 'none', color: 'black' }}><RestCard key={index} resData={restaurant} /></Link>
+          <Link to={"/restaurantinfo/" + restaurant.info.id} style={{ textDecoration: 'none', color: 'black' }} key={restaurant.info.id} ><RestCard resData={restaurant} /></Link>
         ))}
       </div>
     </div>

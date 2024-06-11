@@ -9,7 +9,7 @@ const RestCard = (props)=>{
                   <img src={RES_IMG_URL + cloudinaryImageId}></img>
              </div>
              <div className="text-content">
-                  <div className="res-name"><h3 className="text-wrap">{name}</h3></div>
+                  <div className="res-name"><h3 className="text-wrap font-bold mt-2">{name}</h3></div>
                   <div className="res-avability-time">
                       <span className="rating-icon"><FcRating size='20px' /></span>
                       <span>{avgRatingString}</span>
