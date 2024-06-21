@@ -32,7 +32,13 @@ const RestaurantMenu = ()=>{
                 key={index} 
                 cdata={category?.card?.card} 
                 showItems={index === showIndex ? true : false}
-                setshowIndex = {()=>{setshowIndex(index)}}
+                setshowIndex = {()=>{
+                    if (index === showIndex) {
+                    setshowIndex(null);
+                } 
+                else {
+                    setshowIndex(index);
+                }}}
                 />
             ))}
         </div>
