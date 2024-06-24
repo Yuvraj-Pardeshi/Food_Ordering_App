@@ -5,10 +5,14 @@ import { useState } from "react";
 import {Link} from "react-router-dom"
 import useonlineStatus from "../utils/useonlineStatus";
 // import ReactDOM from "react-dom/client"
+import { useSelector } from "react-redux";
 
-export const Header = ()=>{
+const Header = ()=>{
     const [loginvalue,setloginvalue] = useState("Login");
     const onlineStatus = useonlineStatus();
+    // Subscribing to store using useSelector hook
+    const cartItems = useSelector((store)=>store.cart.items)
+    // console.log(cartItems)
     return (
         <div className="header">
             <div className="logo-container">
@@ -21,7 +25,7 @@ export const Header = ()=>{
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/aboutus">About Us</Link></li>
                     <li><Link to="/contactus">Contact Us</Link></li>
-                    <li><FaCartShopping /></li>
+                    <li><Link to="/cart">Cart<sup>({cartItems.length})</sup></Link> </li>
                     <button className="login-btn"
                         onClick={()=>{
                             setloginvalue(()=>{
