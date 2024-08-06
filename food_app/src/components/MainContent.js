@@ -4,6 +4,10 @@ import { SWIGGY_API } from '../utils/constants.js';
 import Shimmer_comp from './Shimmer.js';
 import {Link} from 'react-router-dom'
 import useonlineStatus from '../utils/useonlineStatus.js';
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { toast, ToastContainer, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const MainContent = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [filterRestaurants, setFilterRestaurants] = useState([]);
@@ -38,6 +42,24 @@ const MainContent = () => {
     )
   }
 
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state && location.state.message) {
+      toast.success(location.state.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  }, [location.state]);
+
   return isloading ? <Shimmer_comp /> : (
     <div className="main-content">
       <div className="filter">
@@ -63,6 +85,7 @@ const MainContent = () => {
           <Link to={"/restaurantinfo/" + restaurant.info.id} style={{ textDecoration: 'none', color: 'black' }} key={restaurant.info.id} ><RestCard resData={restaurant} /></Link>
         ))}
       </div>
+      <ToastContainer />
     </div>
   );
 };
