@@ -29,10 +29,10 @@ const Header = ()=>{
                     <button className="login-btn"
                         onClick={()=>{
                             setloginvalue(()=>{
-                                loginvalue === 'Login' ? setloginvalue("Logout") : setloginvalue("Login")
+                                loginvalue === "Login" ? setloginvalue("Logout") : setloginvalue("Login")
                             });
                         }}
-                    >{loginvalue}</button>
+                    ><Link to="/login">{loginvalue}</Link></button>
                 </ul>
             </div>
         </div>
